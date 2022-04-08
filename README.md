@@ -39,7 +39,7 @@ curl \
 
 ## Delete Thread
 
-You can delete any thread that the bot posted used the `deleteThread` endpoint. You just pass in the ThreadID that you got from the `postThread` response. Alternatively if you navigate to any thread on web, the URL is `https://trythreads.com/<thread_id>`
+You can delete any thread that the bot posted used the `deleteThread` endpoint. You just pass in the `threadID` that you got from the `postThread` response. Alternatively if you navigate to any thread on web, the URL is `https://trythreads.com/<thread_id>`
 
 Example curl:
 
@@ -49,4 +49,17 @@ curl \
   -H "Content-Type: application/json" \
   -X POST https://threads.com/api/public/deleteThread \
   -d '{"threadID":<thread_id>}'
+```
+
+## List your channels
+
+You can list the channels visible to your Bot user. These include public channels in your organization and private channels that the Bot user was added to.
+
+Example curl:
+
+```bash
+curl \
+  -H "Authorization: Bearer <your_api_key>" \
+  -H "Content-Type: application/json" \
+  -X POST https://threads.com/api/public/forums
 ```
