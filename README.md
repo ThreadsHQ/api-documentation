@@ -1,14 +1,14 @@
 # The Threads API
 
-The Threads API allows to post threads to forums via a JSON API.
+The Threads API allows you to post threads to channels via a JSON API.
 
 ## Authentication
-
-You will be issued an api key and all requests to the API must include this key as a bearer token in the Authorization header e.g. `Authorization: Bearer <your_api_key>`.
 
 You can create a new API key and find your existing keys at https://trythreads.com/apiKeys
 
 When you create a new API key, we create a new Bot user for the key. The Bot user has the same posting privileges as any member in your organization.
+
+All requests to the API must include this key as a bearer token in the Authorization header e.g. `Authorization: Bearer <your_api_key>`.
 
 ## Ping endpoint
 
@@ -22,10 +22,10 @@ Which should return a 200 with the name you gave your key.
 
 You can post a thread to a channel. First, make sure you add your Bot user to the channel as a Contributor.
 
-Then, you can make POST requests to `https://trythreads.com/api/public/postThread`. You'll need to include the following in the body (as JSON. Make sure `Content-Type: application/json` is included in your request)
+Then, you can make POST requests to `https://trythreads.com/api/public/postThread`. You'll need to include the following in the body as JSON. Make sure `Content-Type: application/json` is included in your request.
 
-- `forumID (string)`. This is ID of the channel you want to post to. The API uses the word `forum` in place of `channel`. An easy way to find a `forumID` for a channel is to navigate to that channel on the Threads website. The URL will be `trythreads.com/<your_forum_id>`
-- `body (Array<string>)`. These are the blocks of the thread body. To format a block, you can send markdown.
+- `forumID (string)`. This is ID of the channel you want to post to. (The API uses the word `forum` in place of `channel`.) An easy way to find a `forumID` for a channel is to navigate to that channel on the Threads website. The URL will be `trythreads.com/<your_forum_id>`
+- `blocks (Array<string>)`. These are the blocks of the thread body. To format a block, you can send markdown.
 
 As an example, curl:
 
