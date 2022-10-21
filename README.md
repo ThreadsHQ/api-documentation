@@ -20,9 +20,7 @@ Which should return a 200 with the name you gave your key.
 
 ## Post Thread
 
-You can post a thread to a channel. First, make sure you add your Bot user to the channel as a Contributor.
-
-Then, you can make POST requests to `https://trythreads.com/api/public/postThread`. You'll need to include the following in the body as JSON. Make sure `Content-Type: application/json` is included in your request.
+You can post a thread to a channel by making POST requests to `https://trythreads.com/api/public/postThread`. You'll need to include the following in the body as JSON. Make sure `Content-Type: application/json` is included in your request.
 
 ### Required Arguments:
 
@@ -75,7 +73,7 @@ curl \
 
 ## List your channels
 
-You can list the channels visible to your Bot user. These include public channels in your organization and private channels that the Bot user was added to.
+You can list the channels visible to your Bot user. These include public channels in your organization.
 
 Example curl:
 
@@ -88,9 +86,7 @@ curl \
 
 ## Post Chat Message
 
-You can post a message to a chat. First, make sure you add your Bot user to the chat.
-
-Then, you can make POST requests to `https://trythreads.com/api/public/postChatMessage`. You'll need to include the following in the body as JSON. Make sure `Content-Type: application/json` is included in your request.
+You can post a message to a chat by making POST requests to `https://trythreads.com/api/public/postChatMessage`. You'll need to include the following in the body as JSON. Make sure `Content-Type: application/json` is included in your request.
 
 ### Required Arguments:
 
