@@ -4,7 +4,7 @@ The Threads API allows you to post threads to channels via a JSON API.
 
 ## Authentication
 
-You can create a new API key and find your existing keys at https://trythreads.com/apiKeys
+You can create a new API key and find your existing keys at https://threads.com/apiKeys
 
 When you create a new API key, we create a new Bot user for the key. The Bot user has the same posting privileges as any member in your organization.
 
@@ -14,13 +14,13 @@ All requests to the API must include this key as a bearer token in the Authoriza
 
 To test out authentication, you can use the ping endpoint. As an example, using curl:
 
-`curl -H "Authorization: Bearer <your_api_key>" https://trythreads.com/api/public/ping`
+`curl -H "Authorization: Bearer <your_api_key>" https://threads.com/api/public/ping`
 
 Which should return a 200 with the name you gave your key. 
 
 ## Post Thread
 
-You can post a thread to a channel by making POST requests to `https://trythreads.com/api/public/postThread`. You'll need to include the following in the body as JSON. Make sure `Content-Type: application/json` is included in your request.
+You can post a thread to a channel by making POST requests to `https://threads.com/api/public/postThread`. You'll need to include the following in the body as JSON. Make sure `Content-Type: application/json` is included in your request.
 
 ### Required Arguments:
 
@@ -29,7 +29,7 @@ You can post a thread to a channel by making POST requests to `https://trythread
 
   OR
 
-`channelID (string)`. This is ID of the channel you want to post to.  An easy way to find a channelID for a channel is to navigate to that channel on the Threads website. The URL will be `trythreads.com/<your_channel_id>`
+`channelID (string)`. This is ID of the channel you want to post to.  An easy way to find a channelID for a channel is to navigate to that channel on the Threads website. The URL will be `threads.com/<your_channel_id>`
 
 #### 2. 
 `blocks (Array<string>)`. These are the blocks of the thread body. To format a block, you can send markdown.
@@ -40,7 +40,7 @@ You can post a thread to a channel by making POST requests to `https://trythread
 curl \
   -H "Authorization: Bearer <your_api_key>" \
   -H "Content-Type: application/json" \
-  -X POST https://trythreads.com/api/public/postThread \
+  -X POST https://threads.com/api/public/postThread \
   -d '{"channel":<your_channel_name>,"blocks":["# First Block", "Second block"]}'
 ```
 
@@ -48,13 +48,13 @@ curl \
 curl \
   -H "Authorization: Bearer <your_api_key>" \
   -H "Content-Type: application/json" \
-  -X POST https://trythreads.com/api/public/postThread \
+  -X POST https://threads.com/api/public/postThread \
   -d '{"channelID":<your_channel_id>,"blocks":["# First Block", "Second block"]}'
 ```
 
 ## Delete Thread
 
-You can delete any thread that the bot posted using the `deleteThread` endpoint. You just pass in the `threadID` that you got from the `postThread` response. Alternatively if you navigate to any thread on web, the URL is `https://trythreads.com/<thread_id>`
+You can delete any thread that the bot posted using the `deleteThread` endpoint. You just pass in the `threadID` that you got from the `postThread` response. Alternatively if you navigate to any thread on web, the URL is `https://threads.com/<thread_id>`
 
 ### Required Arguments:
 
@@ -86,7 +86,7 @@ curl \
 
 ## Post Chat Message
 
-You can post a message to a chat by making POST requests to `https://trythreads.com/api/public/postChatMessage`. You'll need to include the following in the body as JSON. Make sure `Content-Type: application/json` is included in your request.
+You can post a message to a chat by making POST requests to `https://threads.com/api/public/postChatMessage`. You'll need to include the following in the body as JSON. Make sure `Content-Type: application/json` is included in your request.
 
 ### Required Arguments:
 
@@ -95,7 +95,7 @@ You can post a message to a chat by making POST requests to `https://trythreads.
 
 OR
 
-`chatID (string)`. This is ID of the chat you want to post to.  An easy way to find a chatID for a chat is to navigate to that chat on the Threads website. The URL will be `trythreads.com/messages/<your_chat_id>`
+`chatID (string)`. This is ID of the chat you want to post to.  An easy way to find a chatID for a chat is to navigate to that chat on the Threads website. The URL will be `threads.com/messages/<your_chat_id>`
 
 #### 2.
 `body (string)`. This is the body of the message. To format the body, you can send markdown.
@@ -106,7 +106,7 @@ OR
 curl \
   -H "Authorization: Bearer <your_api_key>" \
   -H "Content-Type: application/json" \
-  -X POST https://trythreads.com/api/public/postChatMessage \
+  -X POST https://threads.com/api/public/postChatMessage \
   -d '{"chat":<your_chat_name>,"body":"# My Message"}'
 ```
 
@@ -114,13 +114,13 @@ curl \
 curl \
   -H "Authorization: Bearer <your_api_key>" \
   -H "Content-Type: application/json" \
-  -X POST https://trythreads.com/api/public/postChatMessage \
+  -X POST https://threads.com/api/public/postChatMessage \
   -d '{"chatID":<your_chat_id>,"body":"# My Message"}'
 ```
 
 ## Delete Chat Message
 
-You can delete any message that the bot posted using the `deleteChatMessage` endpoint. You just pass in the `messageID` that you got from the `postChatMessage` response. Alternatively if you navigate to any thread on web, the URL is `https://trythreads.com/<your_chat_id>?messageID=<your_message_id>`
+You can delete any message that the bot posted using the `deleteChatMessage` endpoint. You just pass in the `messageID` that you got from the `postChatMessage` response. Alternatively if you navigate to any thread on web, the URL is `https://threads.com/<your_chat_id>?messageID=<your_message_id>`
 
 ### Required Arguments:
 
@@ -191,6 +191,6 @@ curl \
 curl \
 -H "Authorization: Bearer <your_api_key>" \
 -H "Content-Type: application/json" \
--X POST https://trythreads.com/api/public/postThread \
+-X POST https://threads.com/api/public/postThread \
 -d '{"channel":<your_channel_name>,"blocks":["# My First Block", "embedded file below", "<!12345678910|>"]}'
 ```
