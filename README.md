@@ -181,7 +181,8 @@ curl \
     \"_underline_\",
     \"-strikethrough-\",
     \"\`inline code\`\",
-    \"* list item1 \n * list item2\"
+    \"* list item1 \n * list item2\",
+    \"<@12345678901|> user mention using userID\"
   ]
 }
 "
