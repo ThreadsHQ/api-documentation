@@ -193,5 +193,5 @@ curl \
 -H "Authorization: Bearer <your_api_key>" \
 -H "Content-Type: application/json" \
 -X POST https://threads.com/api/public/postThread \
--d '{"channel":<your_channel_name>,"blocks":["# My First Block", "embedded file below", "<!12345678910|>"]}'
+-d '{"channel":"<your_channel_name>","blocks":["# My First Block", "embedded file below", "<!12345678910|>"]}'
 ```
