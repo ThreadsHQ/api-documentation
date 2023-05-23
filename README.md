@@ -52,6 +52,44 @@ curl \
   -d '{"channelID":<your_channel_id>,"blocks":["# First Block", "Second block"]}'
 ```
 
+## Post Comment
+
+You can post a comment to a thread by making POST requests to `https://threads.com/api/public/postComment`. You'll need to include the following in the body as JSON. Make sure `Content-Type: application/json` is included in your request.
+
+### Required Arguments:
+
+#### 1. 
+`threadID (string)`. This is ID of the thread you want to post to.  An easy way to find a threadID is to navigate to the thread on the Threads website. The URL will be `threads.com/<your_thread_id>`
+
+#### 2. 
+`blocks (Array<string>)`. These are the blocks of the comment body. To format a block, you can send markdown.
+
+### Optional Arguments:
+
+#### 1. 
+`parentID (string)`. This is ID of the comment/thread you want to post to. If not specified, parentID will assume the value of threadID.`
+
+
+#### Examples:
+
+```bash
+curl \
+  -H "Authorization: Bearer <your_api_key>" \
+  -H "Content-Type: application/json" \
+  -X POST https://threads.com/api/public/postComment \
+  -d '{"threadID":<your_thread_id>,"blocks":["# First Block", "Second block"]}'
+```
+
+```bash
+curl \
+  -H "Authorization: Bearer <your_api_key>" \
+  -H "Content-Type: application/json" \
+  -X POST https://threads.com/api/public/postComment \
+  -d '{"threadID":<your_thread_id>, "parentID":<your_comment_or_thread_id>, "blocks":["# First Block", "Second block"]}'
+```
+
+
+
 ## Delete Thread
 
 You can delete any thread that the bot posted using the `deleteThread` endpoint. You just pass in the `threadID` that you got from the `postThread` response. Alternatively if you navigate to any thread on web, the URL is `https://threads.com/<thread_id>`
