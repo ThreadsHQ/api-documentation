@@ -1,1 +1,1 @@
-Please go to https://support.threads.com/threads-guide/developer/api-introduction for API Docs
+Please go to https://docs.threads.com/developer/api-introduction for API Docs
